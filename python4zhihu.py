@@ -7,6 +7,8 @@ import re
 from PIL import Image
 import time
 
+_DEBUG=True 
+
 # 处理账户错误信息
 class AccountError(Exception):
     def __init__(self, err_message):
@@ -358,6 +360,10 @@ class ZhihuCrawler():
         print count
 
 if __name__ == '__main__':
+    if _DEBUG == True:
+        import pdb 
+        pdb.set_trace() 
+        
     print '请输入用户名和密码，以空格分隔，输入完成后按回车键结束：\n'
     login_str = raw_input()
     login_list = login_str.split(' ')
