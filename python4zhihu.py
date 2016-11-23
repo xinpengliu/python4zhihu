@@ -301,6 +301,7 @@ class ZhihuCrawler():
         for cur_item in cur_list:
             cur_split_list = cur_item.split('/people/')
             # print cur_split_list[1]
+            #根据被关注者的user_id,session,header,cookie等信息构造一个新的Crawler类
             new_crawler = ZhihuCrawler(cur_split_list[1], self.session, self.header, self.cookie)
             new_crawler.send_request()
             count += 1
